@@ -9,7 +9,7 @@ const fmtBool = bool => (bool ? "yes" : "no")
 export function InitCluster({address}) {
   const cu = useCurrentUser()
   const init = useInit(address)
-  useEffect(() => init.check())
+  useEffect(() => init.check(), [address])
 
   if (address == null) return null
 

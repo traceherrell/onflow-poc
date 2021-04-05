@@ -27,7 +27,7 @@ function ProfileForm() {
 
 export function ProfileCluster({address}) {
   const profile = useProfile(address);
-  useEffect(() => profile.refetch())
+  useEffect(() => profile.refetch(), [address])
   if (address == null) return null
 
   return (
